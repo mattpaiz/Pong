@@ -21,11 +21,12 @@ class Simulation:
 
     while True:
       start = time.time()
-      time.sleep(0.5)
+      time.sleep(0.05)
       for ball in self.balls:
-        ball.update(time.time() - start)
-
-    self.window.getMouse()
+        
+        ball.update(time.time() - start, self.width, self.height)
+        
+    # self.window.getMouse()
 
   def drawInitial(self):
     for ball in self.balls:

@@ -1,6 +1,8 @@
+
 from graphics import *
 from ball import *
 from simulation import *
+
 
 import random
 
@@ -17,12 +19,16 @@ colors = [
 
 
 def randomBall():
-  return Ball(random.randint(0, 500), random.randint(0, 500), random.randint(10, 30), random.randint(10, 30), colors[random.randint(0, len(colors) - 1)])
+  return Ball(random.randint(0, 500), random.randint(0, 500), random.randint(40, 100), random.randint(40, 100), colors[random.randint(0, len(colors) - 1)])
+win1= input("Enter a window size value, width: ")
+win2= input("Enter a window size value height: ")
+width=int(win1)
+height=int(win2)
+s = Simulation(width, height)
 
-s = Simulation(500, 500)
 
 
-for i in range(0, 60):
+for i in range(0, 10):
   s.addBall(randomBall())
 #s.addBall(Ball(50, 50, 25, 25, "green"))
 #s.addBall(Ball(100, 100, -25, 25, "blue"))

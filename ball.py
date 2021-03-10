@@ -8,6 +8,7 @@ class Ball:
   vx = 0.0
   vy = 0.0
   color = None
+  
 
   shape = None
 
@@ -18,14 +19,18 @@ class Ball:
     self.vy = vx
     self.color = color
 
-  def update(self, dt):
+  def update(self, dt, width, height):
 
     dx = dt * self.vx
     dy = dt * self.vy
-
+    
     self.x += dx
     self.y += dy
-    
+    if self.x>=width or self.x<=0:
+        self.vx=-self.vx
+    if self.y>=height or self.y<=0:
+        self.vy=-self.vy
+        
     self.shape.move(dx, dy)
 
 
